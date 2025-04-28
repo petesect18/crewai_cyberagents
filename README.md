@@ -1,7 +1,3 @@
-Perfect — here’s your updated `README.md`, changing the license reference from MIT to **GPL-3.0**.
-
----
-
 # AI-Powered Vulnerability Scanning with CrewAI and ZAP
 
 This project is a Proof of Concept (PoC) demonstrating how AI agents can automate web application vulnerability scanning, analysis, and reporting.  
@@ -89,10 +85,11 @@ It combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to create a 
 
 ---
 
-## Built with CrewAI and AI Assistance
+## Built with CrewAI 
 
 This project was built using [**CrewAI**](https://github.com/joaomdmoura/crewAI), an open-source multi-agent orchestration framework designed for complex, collaborative tasks.
 
+## Built with AI Assistance
 The code, structure, and documentation were developed with the support of **ChatGPT** for architectural guidance, code generation, and workflow optimization.  
 This project demonstrates how AI-assisted development can accelerate building functional, real-world cybersecurity tools.
 
