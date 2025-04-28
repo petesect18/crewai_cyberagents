@@ -1,0 +1,47 @@
+tasks:
+  - name: zap_scan
+    agent: scanning_engineer
+    description: |
+      Perform an OWASP ZAP vulnerability scan on the target application.
+      Collect raw alerts including type, risk level, affected URLs, evidence, and descriptions.
+    expected_output: |
+      A list of ZAP alerts in raw format including metadata such as alert name, risk, URL, parameter, and evidence.
+
+  - name: organize_alerts
+    agent: technical_analyst
+    context: [zap_scan]
+    description: |
+      Convert the raw ZAP alerts into two outputs:
+      1. A Markdown table summarizing vulnerabilities by type, risk, affected URLs, and recommended actions.
+      2. A list of detailed technical vulnerability descriptions with evidence and remediation guidance.
+    expected_output: |
+      A structured Markdown vulnerability summary table and a list of formatted technical findings.
+
+  - name: translate_for_executives
+    agent: security_analyst
+    context: [organize_alerts]
+    description: |
+      Translate the technical vulnerability findings into clear, beginner-friendly language.
+      Focus on business risk, high-level descriptions, and practical advice. Avoid jargon.
+    expected_output: |
+      A 2–3 paragraph executive summary written in plain English, summarizing:
+      - The number and severity of findings
+      - Business-level impact
+      - Top 2–3 recommended remediation actions
+
+  - name: compile_final_report
+    agent: cybersecurity_manager
+    context: [zap_scan, organize_alerts, translate_for_executives]
+    description: |
+      You are a senior cybersecurity manager compiling a final Markdown-formatted vulnerability report
+      using the context from previous tasks. Include:
+
+      - Executive Summary
+      - Manager Review (key insights and risk framing)
+      - Vulnerability Summary Table
+      - Detailed Technical Findings
+      - Appendix (total alerts, authentication status, ZAP version)
+
+      Use Markdown formatting and title the report: "🛡️ Web Application Vulnerability Report"
+    expected_output: |
+      A complete Markdown report, with sections for executive and technical audiences, based on the scan data and team analysis.
