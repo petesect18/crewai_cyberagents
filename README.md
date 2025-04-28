@@ -1,8 +1,11 @@
+Perfect — here’s your updated `README.md`, changing the license reference from MIT to **GPL-3.0**.
+
+---
 
 # AI-Powered Vulnerability Scanning with CrewAI and ZAP
 
-A Proof of Concept (PoC) demonstrating how AI agents can automate web application vulnerability scanning, analysis, and reporting.  
-This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to create a modular, scalable cybersecurity workflow.
+This project is a Proof of Concept (PoC) demonstrating how AI agents can automate web application vulnerability scanning, analysis, and reporting.  
+It combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to create a modular, scalable cybersecurity workflow.
 
 ---
 
@@ -10,20 +13,20 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 
 - **Dockerized Setup**:
   - **NodeGoat App** (vulnerable web app) runs locally or inside Docker.
-  - **OWASP ZAP Proxy** container runs on port `8090` to capture and analyze traffic.
-  - **Selenium/Playwright** browser automation routes traffic through ZAP.
+  - **OWASP ZAP Proxy** runs in a Docker container, exposed for API interaction on port 8090.
+  - **Selenium/Playwright** automates browser traffic routed through ZAP.
 
 - **CrewAI Agents**:
   - **Scanning Engineer**: Launches ZAP scans and collects findings.
-  - **Technical Analyst**: Organizes vulnerabilities into a structured format.
-  - **Security Analyst**: Simplifies and summarizes technical findings.
-  - **Cybersecurity Manager**: Finalizes business-level summaries and recommendations.
+  - **Technical Analyst**: Structures vulnerabilities into a technical format.
+  - **Security Analyst**: Simplifies and summarizes findings for better readability.
+  - **Cybersecurity Manager**: Finalizes the business-level summary and recommendations.
 
 - **Automation Flow**:
-  1. Launch Selenium browser session through ZAP.
-  2. Trigger scans via `perform_zap_scan()` from `custom_tool.py`.
-  3. CrewAI agents process results, step-by-step.
-  4. Generate a human-readable Markdown report.
+  1. Launch Selenium browser session through ZAP Proxy.
+  2. Trigger scans via `perform_zap_scan()` inside `custom_tool.py`.
+  3. CrewAI agents process the output step-by-step.
+  4. The final result is a structured, human-readable Markdown vulnerability report.
 
 ---
 
@@ -35,7 +38,7 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
     cd your-repo-name
     ```
 
-2. Set up and run ZAP Proxy container:
+2. Set up and run the ZAP Proxy container:
     ```bash
     docker run -u zap -p 8090:8090 -i owasp/zap2docker-stable zap.sh -daemon -port 8090 -host 0.0.0.0
     ```
@@ -43,16 +46,17 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 3. (Optional) Run NodeGoat application locally:
     - Follow NodeGoat's instructions or use Docker for setup.
 
-4. Install Python dependencies:
+4. Install CrewAI:
     ```bash
-    pip install -r requirements.txt
+    pip install crewai
     ```
 
-5. Run the AI workflow:
+5. Run the main workflow:
     ```bash
     python main.py
     ```
 
+---
 ---
 
 ## File Structure
@@ -73,21 +77,31 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 ```
 [NodeGoat App] --> [Selenium Browser] --> [ZAP Proxy (Docker)] --> [CrewAI Agents] --> [Markdown Report]
 ```
-## Future Improvements
-
-- Add deeper authentication handling for scans.
-- Introduce OpenVAS/Nmap agent integrations.
-- Improve agent retry/error-handling logic.
-- Enable direct CI/CD pipeline integration.
 
 ---
 
+## Future Improvements
+
+- Add deeper authentication handling and login coverage for scans.
+- Expand with OpenVAS/Nmap agent integrations.
+- Improve agent retry mechanisms and error handling.
+- Integrate the scanning and reporting into CI/CD pipelines.
+
+---
+
+## Built with CrewAI and AI Assistance
+
+This project was built using [**CrewAI**](https://github.com/joaomdmoura/crewAI), an open-source multi-agent orchestration framework designed for complex, collaborative tasks.
+
+The code, structure, and documentation were developed with the support of **ChatGPT** for architectural guidance, code generation, and workflow optimization.  
+This project demonstrates how AI-assisted development can accelerate building functional, real-world cybersecurity tools.
+
+To learn more about CrewAI, visit the official repository:  
+[https://github.com/joaomdmoura/crewAI](https://github.com/joaomdmoura/crewAI)
+
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).  
+You are free to use, modify, and distribute this software, provided that any derivative works are also licensed under GPL-3.0.
 
-
-#🤖 Built with AI Collaboration
-
-This project was designed and developed with assistance from AI tools for architecture planning, coding support, and workflow optimization — illustrating AI’s role in building next-generation cybersecurity solutions.
-
+See the `LICENSE` file for full details.
