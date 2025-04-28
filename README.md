@@ -1,12 +1,12 @@
 
-# 🛡️ AI-Powered Vulnerability Scanning with CrewAI and ZAP
+# AI-Powered Vulnerability Scanning with CrewAI and ZAP
 
 A Proof of Concept (PoC) demonstrating how AI agents can automate web application vulnerability scanning, analysis, and reporting.  
 This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to create a modular, scalable cybersecurity workflow.
 
 ---
 
-## 📦 Architecture Overview
+## Architecture Overview
 
 - **Dockerized Setup**:
   - **NodeGoat App** (vulnerable web app) runs locally or inside Docker.
@@ -27,7 +27,7 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 
 ---
 
-## 🚀 Installation
+## Installation
 
 1. Clone the repository:
     ```bash
@@ -55,7 +55,7 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 
 ---
 
-## 📄 File Structure
+## File Structure
 
 | File / Folder       | Purpose                                           |
 |---------------------|---------------------------------------------------|
@@ -68,21 +68,12 @@ This project combines **CrewAI**, **OWASP ZAP**, **Selenium**, and **Docker** to
 
 ---
 
-## 🖼️ System Diagram
+## System Diagram
 
 ```
 [NodeGoat App] --> [Selenium Browser] --> [ZAP Proxy (Docker)] --> [CrewAI Agents] --> [Markdown Report]
 ```
-
----
-
-## 🤖 Built with AI Collaboration
-
-This project was designed and developed with assistance from AI tools for architecture planning, coding support, and workflow optimization — illustrating AI’s role in building next-generation cybersecurity solutions.
-
----
-
-## 🔥 Future Improvements
+## Future Improvements
 
 - Add deeper authentication handling for scans.
 - Introduce OpenVAS/Nmap agent integrations.
@@ -91,10 +82,12 @@ This project was designed and developed with assistance from AI tools for archit
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
----
 
-Would you like me to also suggest a professional GitHub **repository description** and **tags** (`topics`) to make it more discoverable? 🚀 (It'll help people find your project easier!)
+#🤖 Built with AI Collaboration
+
+This project was designed and developed with assistance from AI tools for architecture planning, coding support, and workflow optimization — illustrating AI’s role in building next-generation cybersecurity solutions.
+
